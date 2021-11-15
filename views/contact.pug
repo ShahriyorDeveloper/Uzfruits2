@@ -1,0 +1,76 @@
+extends layout
+
+block content
+
+
+  // Breadcrumb Banner Area Start
+  .breadcrumb-banner-area
+    .container
+      .row
+        .col-md-12
+          .breadcrumb-text
+            h1.text-center= title
+            .breadcrumb-bar
+              ul.breadcrumb.text-center
+                li
+                  a(href='#!') фундучок
+                li ДЛЯ КОНТАКТА
+  // End of Breadcrumb Banner Area
+  // Google Map Area Start
+  .google-map-area
+    // Map Section
+    #contacts.map-area
+      .mapouter(style='width: 100%;')
+        .gmap_canvas(style='width: 100%;')
+          iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4307.49912302141!2d71.72238188118452!3d41.19574464417112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a4b1de16a2b653%3A0x11616747cc058230!2sUzFruits!5e0!3m2!1sru!2s!4v1632811491645!5m2!1sru!2s' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy')
+
+          
+          style.
+            .mapouter{position:relative;text-align:right;height:485px;width:1080px;}
+          style.
+            .gmap_canvas {overflow:hidden;background:none!important;height:485px;width:1080px;}
+  // End of Google Map Area
+  // Contact Form Area Start
+  .contact-form-area.section-padding
+    .container
+      .row
+        .col-lg-4.col-md-12
+          h4.contact-title КОНТАКТНАЯ ИНФОРМАЦИЯ
+          .contact-text
+            p
+              span.c-icon
+                i.zmdi.zmdi-phone
+              span.c-text +998 91 181 00 03
+            p
+              span.c-icon
+                i.zmdi.zmdi-email
+              span.c-text info@UzFruits.uz
+            p
+              span.c-icon
+                i.zmdi.zmdi-pin
+              span.c-text  Наманган вилояти, Косонсой тумани, Кушон кичик саноат зонаси
+          h4.contact-title Социальные сети
+          .link-social
+            a(href='#')
+              i.zmdi.zmdi-facebook
+           
+            a(href='#')
+              i.zmdi.zmdi-google-plus
+           
+            a(href='#')
+              i.zmdi.zmdi-instagram
+        .col-lg-8.col-md-12
+          h4.contact-title Отправьте свои отзывы и предложения
+          form(method="POST" action="/")
+            .row
+              .col-md-6
+                label(for='name') Ваше имя
+                input#name.form-control(type='text' name="name" placeholder="Artur chagayev")
+              .col-md-6
+                label(for='phoneNumber') Твой номер телефона
+                input#phoneNumber.form-control(type='text' name="phoneNumber" placeholder="+998 91 181 00 03")
+              .col-md-12
+                textarea(name='text' cols='30' rows='10' placeholder='Отправьте свои отзывы и предложения')
+                button.button-default послать
+          p.form-messege
+  // End of Contact Form

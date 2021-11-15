@@ -1,0 +1,227 @@
+//- // Color Switcher
+//- .ec-colorswitcher
+//-   a.ec-handle(href='#')
+//-     i.zmdi.zmdi-settings
+//-   h3 Style Switcher
+//-   .ec-switcherarea
+//-     h6 Select Layout
+//-     .layout-btn
+//-       a.ec-boxed(href='#')
+//-         span Boxed
+//-       a.ec-wide(href='#')
+//-         span Wide
+//-     h6 Chose Color
+//-     ul.ec-switcher
+//-       li
+//-         a.cs-color-1.styleswitch(href='#' data-rel='color-one')
+//-       li
+//-         a.cs-color-2.styleswitch(href='#' data-rel='color-two')
+//-       li
+//-         a.cs-color-3.styleswitch(href='#' data-rel='color-three')
+//-       li
+//-         a.cs-color-4.styleswitch(href='#' data-rel='color-four')
+//-       li
+//-         a.cs-color-5.styleswitch(href='#' data-rel='color-five')
+//-       li
+//-         a.cs-color-6.styleswitch(href='#' data-rel='color-six')
+//-       li
+//-         a.cs-color-7.styleswitch(href='#' data-rel='color-seven')
+//-       li
+//-         a.cs-color-8.styleswitch(href='#' data-rel='color-eight')
+//-       li
+//-         a.cs-color-9.styleswitch(href='#' data-rel='color-nine')
+//-       li
+//-         a.cs-color-10.styleswitch(href='#' data-rel='color-ten')
+//-     .ec-pattren
+//-       h6 Chose Pattren
+//-       .pattren-wrap
+//-         a.styleswitch(href='#' data-rel='pattren1')
+//-           img(src='img/ec-pattren/pattren1.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='pattren2')
+//-           img(src='img/ec-pattren/pattren2.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='pattren3')
+//-           img(src='img/ec-pattren/pattren3.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='pattren4')
+//-           img(src='img/ec-pattren/pattren4.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='pattren5')
+//-           img(src='img/ec-pattren/pattren5.jpg' alt='')
+//-     .ec-background
+//-       h6 Chose Background
+//-       .background-wrap
+//-         a.styleswitch(href='#' data-rel='background1')
+//-           img(src='img/ec-background/bg-1.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='background2')
+//-           img(src='img/ec-background/bg-2.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='background3')
+//-           img(src='img/ec-background/bg-3.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='background4')
+//-           img(src='img/ec-background/bg-4.jpg' alt='')
+//-         a.styleswitch(href='#' data-rel='background5')
+//-           img(src='img/ec-background/bg-5.jpg' alt='')
+//- // Color Switcher end
+
+//- .category-area
+hr
+// Newsletter Area Start
+.newsletter-area
+  .container
+    .row
+      .col-lg-5.col-md-5
+        .newsletter-content
+            h3 Присоединяйтесь 
+            h2 к нам Для подключения
+      .col-lg-7.col-md-7
+        .newsletter-form.angle
+          form#mc-form.mc-form.footer-newsletter.fix(action='#')
+            .subscribe-form
+              input#mc-email(type='number' name='phone' placeholder='+998 91 181 00 03' readonly='')
+              a(href='index.html')
+                  //- button#mc-submit(type='submit') SUBSCRIBE
+          // mailchimp-alerts Start
+          .mailchimp-alerts.text-centre.fix.pull-right
+            .mailchimp-submitting
+            // mailchimp-submitting end
+            .mailchimp-success
+            // mailchimp-success end
+            .mailchimp-error
+            // mailchimp-error end
+            // mailchimp-alerts end
+// End of Newsletter Area
+
+
+// Footer Widget Area Start
+.footer-widget-area
+  .container
+    .row.d-flex.justify-content-center
+      .col-lg-3.col-12
+        .single-footer-widget
+          .footer-logo
+            a(href='/')
+              //- img(src='img/logo/footer.png' alt='')
+              img(src='img/logo/logo.png' alt='' width="200")
+          p
+            | Интернет-магазин вкусных и полезных продуктов для вашего здоровья
+
+          .social-icons
+            a(href='#!')
+              i.zmdi.zmdi-facebook
+            a(href='#!')
+              i.zmdi.zmdi-instagram
+            a(href='#!')
+              i.zmdi.zmdi-google-plus
+           
+
+      .col-lg-5.col-12
+        .single-footer-widget
+          
+          ul.footer-list
+            li
+              a(href='#!') Акции
+            li
+              a(href='#!') Оплата и доставка
+            
+            li
+              a(href='#!') Возврат и обмен
+            li
+              a(href='#!') Акции
+            li
+              a(href='#!') Оплата и доставка
+            
+            li
+              a(href='#!') Возврат и обмен
+            li
+              a(href='#!') Товары оптом
+            li
+              a(href='#!') Возврат и обмен
+            li
+              a(href='#!') КонтактыОтзывы  
+            li
+              a(href='#!') о насПолитика
+            li
+              a(href='#!') конфиденциальности
+      .col-lg-3.col-12
+        .single-footer-widget
+          h3 Наши контакты
+          a(href='tel:+998 91 181 00 03')
+            i.fa.fa-phone
+            | +998 91 181 00 03
+            br
+            span.ml-4   +998 91 181 00 03
+          span
+            i.fa.fa-envelope
+            | Часы работы: Пн-Вс  
+            br
+            | (с 9:00-18:00)
+         
+          span
+            i.fa.fa-map-marker
+            | Наманган вилояти, Косонсой тумани, Кушон кичик саноат зонаси
+      
+      //- .col-lg-3.col-md-6.col-12
+      //-   .single-footer-widget
+      //-     h3 Instagram
+      //-     .instagram-image
+      //-       .footer-img
+      //-         a(href='#')
+      //-           img(src='img/footer/1.jpg' alt='')
+      //-       .footer-img
+      //-         a(href='#')
+      //-           img(src='img/footer/2.jpg' alt='')
+      //-       .footer-img
+      //-         a(href='#')
+      //-           img(src='img/footer/3.jpg' alt='')
+      //-       .footer-img
+      //-         a(href='#')
+      //-           img(src='img/footer/4.jpg' alt='')
+      //-       .footer-img
+      //-         a(href='#')
+      //-           img(src='img/footer/5.jpg' alt='')
+      //-       .footer-img
+      //-         a(href='#')
+      //-           img(src='img/footer/6.jpg' alt='')
+// End of Footer Widget Area
+// Footer Area Start
+footer.footer-area
+  .container
+    .row
+      .col-lg-6.col-md-7.col-12
+        span
+          |  ©  2021
+
+          |  Все права защищены
+          
+          
+      .col-lg-6.col-md-5.col-12
+        .column-right
+          span Услуги лицензированы
+// End of Footer Area
+
+
+//
+  jquery
+  ============================================ 
+script(src='/js/vendor/jquery-1.12.4.min.js')
+//
+  popper JS
+  ============================================
+script(src='/js/popper.min.js')
+//
+  bootstrap JS
+  ============================================
+script(src='/js/bootstrap.min.js')
+//
+  AJax Mail JS
+  ============================================
+script(src='/js/ajax-mail.js')
+//
+  plugins JS
+  ============================================
+script(src='/js/plugins.js')
+//
+  StyleSwitch JS
+  ============================================
+// script(src='js/styleswitch.js')
+//
+  main JS
+  ============================================
+script(src='/js/main.js')

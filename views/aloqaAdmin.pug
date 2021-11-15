@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  
+  // Bo'limlar
+  .category-area
+    .container
+      .row
+        .col-md-12
+          .section-title-wrapper
+            .section-title
+              h3= title
+              p Mijozlar va kuzatuvchilardan kelib tushgan taklif va Surovlar
+      .row.d-flex.justify-content-center
+      
+        .col-12
+          //- .single-category-item
+          //-   .single-category-text
+          //-     h3
+          //-       a(href="categories/" + category._id)= category.name
+          //-     .social-links
+          //-       a(href="categories/" + category._id)
+          //-         i(class=`${category.icon}`)
+          //-         //- if user
+          //-         //-   a(href="/categories/edit/" + category._id).m-2.btn.btn-warning O`zgartirish
+          //-         //-   a(href="/categories/delete/" + category._id).m-2.btn.btn-danger O`chirish
+          //-         if user
+          //-           a(href="/categories/edit/" + category._id)
+          //-             i.zmdi.zmdi-edit.text-warning
+          //-           a(href="/categories/delete/" + category._id)
+          //-             i.zmdi.zmdi-delete.text-danger
+          table.table
+            thead.thead-dark
+              tr
+                th(scope='col') №
+                th(scope='col') Ismi
+                th(scope='col') Tel
+                th(scope='col') Matn
+                th(scope='col') Olib tashlash
+            tbody
+              each contact, i in contacts
+                tr
+                  //- th(scope='row') #{contact}
+                  td #{i + 1}
+                  td #{contact.name}
+                  td #{contact.phoneNumber}
+                  td #{contact.text}
+                  td
+                    a(href="/contact/aloqa/delete/" + contact._id)
+                      i.zmdi.zmdi-delete.text-danger

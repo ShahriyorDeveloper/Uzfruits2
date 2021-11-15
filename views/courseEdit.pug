@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    .container.mt-5
+        br
+        h1.mb-3.mt-5= title
+        form(method="POST" action="/kurslar/edit/" + course._id)
+          .form-group.mt-2
+              label(for='name') Kurs nomi
+              input#name.form-control(type='text' name="name" value=(course.name))
+          .form-group.d-flex.mt-2
+              label(for='teacher') O'qituvchini tanlang - 
+              select(type="text" name="teacher")
+                  each teacher, i in teachersList
+                      option(value=teacher._id) #{teacher.name}
+          .form-group
+              label(for='courseDate') Kurs davomiyligini kiriting
+              input#courseDate.form-control(type='number' name="courseDate")
+          //- .form-group
+          //-     label(for='image') Rasm
+          //-     input#image.form-control(type='file' name="image" )
+          .form-group
+              label(for='text') Kurs haqida ma'lumotlar matni
+              input#audio.form-control(type='text' name="text")
+          .form-group.d-flex.mt-2
+              label(for='category') Kategoriya -  
+              select(type="text" name="category")
+                  each category, i in categoryList
+                      option(value=category._id) #{category.name}
+          button.btn.btn-success.m-2(type='submit') Yangilash
+

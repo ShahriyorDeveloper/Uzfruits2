@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    .container.mt-5
+        br
+        h1.mb-3.mt-5= title
+        form(method="POST" action="/teacher/add" enctype='multipart/form-data')
+            .form-group.mt-2
+                label(for='name') Ismi
+                input#name.form-control(type='text' name="name")
+            .form-group
+                label(for='text') Matn kiriting
+                input#icon.form-control(type='text' name="text")
+            .form-group
+                label(for='telegram') Telegram linki
+                input#color.form-control(type='text' name="telegram")
+            .form-group
+                label(for='phoneNumber') Telefon raqami
+                input#color.form-control(type='text' name="phoneNumber")
+            .form-group
+                label(for='instagram') Instagram manzili linki
+                input#color.form-control(type='text' name="instagram")
+            .form-group
+                label(for='imag+e') Rasm
+                input#image.form-control(type='file' name="image")
+            
+            
+            button.btn.btn-success.m-2(type='submit') Yaratish

@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  //- section#contact.contact
+  //-   .container
+  //-     h1.pt-5.text-info= title
+  //-     if user
+  //-       a.m-2.btn.btn-dark(href='/teacher/add') Yangi qo'shish
+  //-     .row.mt-5
+  //-       .col-lg-10
+  //-         .info
+  //-           .address
+  //-             each teacher, i in teachersList
+  //-               .p.d-flex
+  //-                 a(href="categories/" + teacher._id)
+  //-                   h4=teacher.name
+  //-                 a(href="categories/" + teacher._id)
+  //-                   //- span #{category.icon}
+  //-                   i(class=`${teacher.icon}`)
+  //-                 //- p
+  //-                 //-   span.rounded-circle(style=`background: ${category.color}` ) &
+  //-                 if user
+  //-                   a(href="/teacher/edit/" + teacher._id).m-2.btn.btn-warning O`zgartirish
+  //-                   a(href="/teacher/delete/" + teacher._id).m-2.btn.btn-danger O`chirish
+  //-               hr
+  // Teachers Area Start
+  .teachers-area.padding-top
+    .container
+      .row
+        .col-md-12
+          .section-title-wrapper
+            .section-title
+              h3= title
+              p Markazimizning ajoyib o'qituvchilari bilan tanishing
+      if user
+        .row
+          .col-md-12
+            a.btn.btn-dark.m-5(href=`teacher/add`) Yangi qo'shish
+      .row
+        each teacher, i in teachersList
+          .col-lg-3.col-md-6.col-12
+            .single-teacher-item.mt-3
+              .single-teacher-image
+                a(href=teacher.telegram)
+                  img(src="/img/teacher/" + teacher.image)
+              .single-teacher-text
+                h3
+                  a(href='#') #{teacher.name}
+                h4 O'qituvchi
+                p
+                  | #{teacher.text}
+                .social-links
+                  a(href=`${teacher.telegram}`)
+                    i.fab.fa-telegram-plane
+                  a(href=`tel:${teacher.phoneNumber}`)
+                    i.zmdi.zmdi-phone
+                  //- a(href='#')
+                  //-   i.zmdi.zmdi-google-old
+                  a(href=`tel:${teacher.instagram}`)
+                    i.zmdi.zmdi-instagram
+                  if user
+                    a(href="/teacher/edit/" + teacher._id)
+                      i.zmdi.zmdi-edit.text-warning
+                    a(href="/teacher/delete/" + teacher._id)
+                      i.zmdi.zmdi-delete.text-danger
+  // End of Teachers Area

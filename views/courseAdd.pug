@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .container.mt-5
+        br
+        h1.mb-3.mt-5  Post qo`shish bo`limi
+        form(method="POST" action="/kurslar/add" enctype='multipart/form-data')
+            .form-group.mt-2
+                label(for='name') Post nomi
+                input#name.form-control(type='text' name="name")
+            //- .form-group.d-flex.mt-2
+            //-     label(for='teacher') ismingiz - 
+            //-     select(type="text" name="teacher")  
+            //-         each teacher, i in teachersList
+            //-             option(value=teacher._id) #{teacher.name}
+            .form-group
+                label(for='courseDate') Post yaratilgan oy
+                input#singer.form-control(type='number' name="courseDate" value="4")
+            .form-group
+                label(for='image') Rasm
+                input#image.form-control(type='file' name="image")
+            .form-group
+                label(for='text') Post haqida ma'lumotlar matni
+                input#audio.form-control(type='text' name="text")
+            .form-group.d-flex.mt-2
+                label(for='category') Kategoriya -  
+                select(type="text" name="category")
+                    each category, i in categoryList
+                        option(value=category._id) #{category.name}
+            button.btn.btn-success.m-2(type='submit') Yaratish

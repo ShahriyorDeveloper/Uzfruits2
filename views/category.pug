@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  
+  // Bo'limlar
+  .category-area
+    .container
+      .row
+        a.m-2.btn.btn-dark(href='/categories/add') Yangi qo'shish
+        .col-md-12
+          .section-title-wrapper
+            .section-title
+              h3 Bo'limlar
+              p Kurslarimizni alohida bo'limlar orqali bilishingiz mumkin!
+      .row.d-flex.justify-content-center
+        each category, i in categoryList
+          .col-lg-3.col-md-6.col-12
+            .single-category-item
+              .single-category-text
+                h3
+                  a(href="categories/" + category._id)= category.name
+                .social-links
+                  a(href="categories/" + category._id)
+                    i(class=`${category.icon}`)
+                    //- if user
+                    //-   a(href="/categories/edit/" + category._id).m-2.btn.btn-warning O`zgartirish
+                    //-   a(href="/categories/delete/" + category._id).m-2.btn.btn-danger O`chirish
+                    if user
+                      a(href="/categories/edit/" + category._id)
+                        i.zmdi.zmdi-edit.text-warning
+                      a(href="/categories/delete/" + category._id)
+                        i.zmdi.zmdi-delete.text-danger

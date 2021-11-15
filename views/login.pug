@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    //- .container.mt-5.d-flex.justify-content-center
+    //-     .col-5.text-center
+    //-         br
+    //-         h1.mb-3.mt-5= title
+    //-         form(method="POST" action="/login")
+    //-             .form-group
+    //-                 label(for='username') username
+    //-                 input#username.form-control(type='text' name="username")
+    //-             .form-group
+    //-                 label(for='password') parol
+    //-                 input#password.form-control(type='password' name="password")
+                
+    //-             button.btn.btn-success.m-2(type='submit') Kirish
+
+
+    .container.pt-5
+        .d-flex.justify-content-center.h-100
+            .login
+                .card
+                    .card-header
+                        h3= title
+                        .d-flex.justify-content-end.social_icon
+                            span
+                                i.bx.bxl-facebook-square
+                            span
+                                i.bx.bxl-google-plus-circle
+                            span
+                                i.bx.bxl-instagram-alt
+                    .card-body
+                        form(method="POST" action="/adm/login")
+                            .input-group.form-group
+                                .input-group-prepend
+                                    span.input-group-text.text-white
+                                        i.bx.bxs-user
+                                input.form-control.bg-dark(type='text' placeholder='email' name="username")
+                            .input-group.form-group
+                                .input-group-prepend
+                                    span.input-group-text.text-white
+                                        i.bx.bxs-key
+                                input.form-control(type='password' placeholder='password' name="password")
+                            .row.align-items-center.remember
+                                input(type='checkbox')
+                                | Eslab qolish
+                            .form-group
+                                input.btn.login_btn(type='submit' value='Kirish')
+                    //- .card-footer
+                    //-     .d-flex.justify-content-center.links
+                    //-         | A'zo bo'lmaganmisiz?
+                    //-         a(href='#') A'zo bo'lish
+                    //-     .d-flex.justify-content-center
+                    //-         a(href='#') Parol esdan chiqdimi

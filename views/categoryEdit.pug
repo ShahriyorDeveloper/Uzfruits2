@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container.mt-5
+        br
+        h1.mb-3.mt-5= title
+        form(method="POST" action="/categories/edit/" + categories._id)
+            .form-group.mt-2
+                label(for='name') Kategoriya nomi
+                input#name.form-control(type='text' name="name" value=(categories.name))
+            .form-group
+                label(for='icon') icon
+                input#icon.form-control(type='text' name="icon" value=(categories.icon))
+            .form-group
+                label(for='color') Rangi
+                input#color.form-control(type='text' name="color" value=(categories.color))
+            
+            button.btn.btn-success.mt-2(type='submit') O`zgartirish

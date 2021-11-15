@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container.mt-5
+        br
+        h1.mb-3.mt-5= title
+        form(method="POST" action="/adm/register")
+            .form-group.mt-2
+                label(for='name') Ism
+                input#name.form-control(type='text' name="name")
+            .form-group.mt-2
+                label(for='username') username
+                input#username.form-control(type='text' name="username")
+            .form-group.mt-2
+                label(for='email') email
+                input#email.form-control(type='email' name="email")
+            .form-group.mt-2
+                label(for='password') parol
+                input#password.form-control(type='password' name="password")
+            .form-group.mt-2
+                label(for='password') parolni tasdiqlang
+                input#password_verify.form-control(type='password' name="password_verify")
+            
+            button.btn.btn-success.mt-2(type='submit') Ro'yhatdan o'tish

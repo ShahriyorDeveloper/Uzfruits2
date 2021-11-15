@@ -1,0 +1,273 @@
+extends layout
+
+block content
+  //- .container
+
+  //-   a(href="/music/edit/" + course._id).mr-5.btn.btn-warning O`zgartirish
+  //-   span  
+  //-   a(href="/music/delete/" + course._id).btn.btn-danger O`chirish
+
+
+  //- // Course Area Start
+  //- .course-area.section-padding
+  //-     .container
+  //-         .row
+  //-             .col-md-12
+  //-                 .section-title-wrapper
+  //-                     .section-title
+  //-                         h3=title
+  //-                         p Markazimiz tomonidan siz uchun taqdim etadigan kurslarimiz bilan tanishing
+  //-         if user
+  //-           .row
+  //-             .col-12.d-flex
+  //-               a.btn.btn-dark.m-5(href=`kurslar/add`) Yangi qo'shish
+  //-         .row.d-flex.justify-content-center
+  //-             each course, i in courseList
+  //-               .col-lg-4.col-md-6
+  //-                   .single-item.mb-5.mt-5
+  //-                       .single-item-image.overlay-effect
+  //-                           a(href="kurslar/" + course._id)
+  //-                               //- img(src='img/course/1.jpg' alt='')
+  //-                               img(src="/img/course/" + course.image alt='')
+  //-                       .single-item-text
+  //-                           h4
+  //-                               a(href="kurslar/" + course._id) #{course.name}
+  //-                           .single-item-text-info
+  //-                               span
+  //-                                   i.fas.fa-chalkboard-teacher
+  //-                                   span
+  //-                                     |  #{course.teacher.name}
+  //-                               span
+  //-                                   i.fas.fa-clock 
+  //-                                   span  #{course.courseDate} oy
+  //-                           p(style={height: '9em', overflow: 'hidden'}) #{course.text}
+  //-                       .button-bottom
+  //-                           a.button-default(href='#') Kirish
+
+
+
+
+  // Breadcrumb Banner Area Start
+  .breadcrumb-banner-area
+    .container
+      .row
+        .col-md-12
+          .breadcrumb-text
+            h1.text-center Kurs haqida
+            .breadcrumb-bar
+              ul.breadcrumb.text-center
+                li
+                  a(href='/') Elegant
+                li
+                  a(href=`/categories/` + course.category._id) #{course.category.name}
+                span 
+                  i.zmdi.zmdi-chevron-right.ml-2
+                li #{course.name}
+  // End of Breadcrumb Banner Area
+  // Course Details Area Start
+  .course-details-area.section-padding
+    .container
+      .row
+        .col-lg-9.col-md-12.col-12
+          .course-details-content
+            .single-course-details
+              .row
+                .col-md-6
+                  .overlay-effect.w-100.h-100
+                    a.w-100.h-100(href='#')
+                      img.cw-100-img(style='height: inherit; object-fit: cover' alt='' src=`/img/course/${course.image}` )
+                .col-md-6
+                  .single-item-text
+                    h4 #{course.name}
+                    .single-item-text-info
+                      span
+                        i.fas.fa-chalkboard-teacher
+                        span  #{course.teacher.name}
+                      span
+                        i.fas.fa-clock 
+                        span  #{course.courseDate} oy
+                    .course-text-content
+                      p #{course.text}
+                      //- p
+                      //-   | but the mrity have suffered alteration in some orm, mora ekti fol ke bacabo herre many buthe mri have suffered alteration in
+                    .single-sidebar-widget
+                      ul.tags
+                        li
+                          a(href='#') #{course.category.name}
+          
+                    //- .single-item-content
+                    //-   .single-item-comment-view
+                    //-     span
+                    //-       i.zmdi.zmdi-eye
+                    //-       | 59
+                    //-     span
+                    //-       i.zmdi.zmdi-comments
+                    //-       | 19
+                    //-   //- .single-item-rating
+                    //-   //-   i.zmdi.zmdi-star
+                    //-   //-   i.zmdi.zmdi-star
+                    //-   //-   i.zmdi.zmdi-star
+                    //-   //-   i.zmdi.zmdi-star
+                    //-   //-   i.zmdi.zmdi-star-half
+            .col-9.m-auto
+              h4.text-center.pt-2 Kursga yozilish
+              hr.bg-danger
+              form(method="POST" action="/contact/add/pupils")
+                          .form-group.col-12
+                              label(for='name') Ismingiz
+                              input#name.form-control(type='text' name="name" placeholder="Yunusov Bobur")
+                          .form-group.col-12
+                              label(for='phoneNumber') Telefon raqamingiz
+                              input#phoneNumber.form-control(type='text' name="phoneNumber" placeholder="+9989333026727")
+                          .d-none
+                            .form-group.d-flex.mt-2
+                              label(for='course') Kurs id raqami 
+                              select(type="text" name="course")
+                                  option(value=course._id) #{course._id}
+                          p.text-center
+                            button.btn.btn-success.m-2(type='submit') Kursga yozilish
+              hr.bg-danger
+          
+
+            //- .course-duration
+              .duration-title
+                .text
+                  span Lessons
+                  span.text-right Estimated Time
+              .duration-text
+                .text
+                  span Print design
+                  span.text-right 15 days
+                .text
+                  span web design
+                  span.text-right 10 days
+                .text
+                  span apps design
+                  span.text-right 16 days
+                .text
+                  span web design
+                  span.text-right 20 days
+                .text
+                  span web design
+                  span.text-right 22 days
+            //- .comments
+              h4.title Comments
+              .single-comment
+                .author-image
+                  img(src='/img/comment/1.jpg' alt='')
+                .comment-text
+                  .author-info
+                    h4
+                      a(href='#') MD Tokdir Ali
+                    span.reply
+                      a(href='#') Reply
+                    span.comment-time Posted on Jun 12, 2015 /
+                  p
+                    | There are many variations of passages of Lorem Ipsum available, but the majority have suffered aation in some form, by injected humour,
+              .single-comment.comment-reply
+                .author-image
+                  img(src='/img/comment/2.jpg' alt='')
+                .comment-text
+                  .author-info
+                    h4
+                      a(href='#') MD Kopal Ali
+                    span.reply
+                      a(href='#') Reply
+                    span.comment-time Posted on Jun 12, 2015 /
+                  p
+                    | There are many variations of passages of Lorem Ipsum available, but the majority have suffered aation in some form, by injected humour,
+              .single-comment
+                .author-image
+                  img(src='/img/comment/3.jpg' alt='')
+                .comment-text
+                  .author-info
+                    h4
+                      a(href='#') MR Soytan Ali
+                    span.reply
+                      a(href='#') Reply
+                    span.comment-time Posted on Jun 12, 2015 /
+                  p
+                    | There are many variations of passages of Lorem Ipsum available, but the majority have suffered aation in some form, by injected humour,
+        .col-lg-3.col-md-12.col-12
+          .sidebar-widget
+            .single-sidebar-widget
+              .tution-wrapper
+                .tution-fee
+                  h1 Tanishing
+                .tutor-image
+                  img.w-50(src=`/img/teacher/${course.teacher.image}` alt='')
+                .single-teacher-text
+                  h3
+                    a(href='#') #{course.teacher.name}
+                  h4 O'qituvchi
+                  p #{course.teacher.text}
+                  .social-links
+                    a(href=`${course.teacher.telegram}`)
+                      i.fab.fa-telegram-plane
+                    a(href=`tel:${course.teacher.phoneNumber}`)
+                      i.zmdi.zmdi-phone
+                    a(href=`tel:${course.teacher.instagram}`)
+                      i.zmdi.zmdi-instagram
+                    if user
+                      a(href="/teacher/edit/" + course.teacher._id)
+                        i.zmdi.zmdi-edit.text-warning
+                      a(href="/teacher/delete/" + course.teacher._id)
+                        i.zmdi.zmdi-delete.text-danger
+            //- .single-sidebar-widget
+            //-   h4.title Search by Tags
+            //-   ul.tags
+            //-     li
+            //-       a(href='#') Photoshop
+            //-     li
+            //-       a(href='#') Design
+            //-     li
+            //-       a(href='#') Tutorial
+            //-     li
+            //-       a(href='#') Courses
+            //-     li
+            //-       a(href='#') Premium
+            //-     li
+            //-       a(href='#') Designtuto
+            .single-sidebar-widget
+              h4.title Bo'limlar
+              ul.list-group
+                each category, i in categoryList
+                  a(href=`/categories/${category._id}`)
+                    li.list-group-item.d-flex.justify-content-between.align-items-center #{category.name}
+                      span.badge.badge-primary.badge-pill #{category.kurslar}
+
+            //- .single-sidebar-widget
+            //-   h4.title Related Courses
+            //-   .single-item
+            //-     .single-item-image.overlay-effect
+            //-       a(href='#')
+            //-         img(alt='' src='/img/course/1.jpg')
+            //-     .single-item-text
+            //-       h4
+            //-         a(href='#') Photoshop CC 2017
+            //-       .single-item-text-info
+            //-         span
+            //-           | By: 
+            //-           span M S Nawaz
+            //-         span
+            //-           | Date: 
+            //-           span 20.5.15
+            //-       p
+            //-         | There are many variations of sages of Lorem Ipsum available, but the mrity have suffered alteration in some orm, by injected humo
+            //-       .single-item-content
+            //-         .single-item-comment-view
+            //-           span
+            //-             i.zmdi.zmdi-eye
+            //-             | 59
+            //-           span
+            //-             i.zmdi.zmdi-comments
+            //-             | 19
+            //-         .single-item-rating
+            //-           i.zmdi.zmdi-star
+            //-           i.zmdi.zmdi-star
+            //-           i.zmdi.zmdi-star
+            //-           i.zmdi.zmdi-star
+            //-           i.zmdi.zmdi-star-half
+            //-     .button-bottom
+            //-       a.button-default(href='#') Learn Now
+  // End of Course Details Area

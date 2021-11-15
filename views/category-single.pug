@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  //- section#contact.contact
+  //-   .container.text-info.d-flex.align-items-center
+  //-     p.p-3
+  //-       h3= title
+  //-         span -
+  //-       a(href=category._id)
+  //-         h4=category.name
+  //-       //- a(href=category._id)
+  //-       //-   p=category.icon
+  //-       //- p=category.color
+  //-       br
+
+  //-   .container.text-info.d-block.p-3
+  //-     .col
+  //-       each music, i in musics
+  //-         .d-flex.justify-content-start
+  //-           .d-block
+  //-             a(href="/music/" + music._id)
+  //-               h4=music.name
+  //-             a(href="/music/" + music._id)
+  //-               p=music.singer
+  //-           audio(controls='', ) //autoplay=''
+  //-             source(src='/uploads/audios/' + music.audio, type='audio/mpeg')
+
+  // Course Area Start
+  .course-area.section-padding
+      .container
+          .row
+              .col-md-12
+                  .section-title-wrapper
+                      .section-title
+                        h3=category.name
+                          |  - Bo'limi
+                        p Markazimiz tomonidan siz uchun taqdim etadigan kurslarimiz bilan tanishing
+          if user
+            .row
+              .col-12.d-flex
+                a.btn.btn-dark.m-5(href=`/kurslar/add`) Yangi qo'shish
+          .row.d-flex.justify-content-center
+              each course, i in courses
+                .col-lg-4.col-md-6
+                    .single-item.mb-5.mt-5
+                        .single-item-image.overlay-effect
+                            a(href="/kurslar/" + course._id)
+                                //- img(src='img/course/1.jpg' alt='')
+                                img(src="/img/course/" + course.image alt='')
+                        .single-item-text
+                            h4
+                                a(href="/kurslar/" + course._id) #{course.name}
+                            .single-item-text-info
+                                //- span
+                                //-     i.fas.fa-chalkboard-teacher
+                                //-     span
+                                //-       |  #{course.teacher.name}
+                                span
+                                    i.fas.fa-clock 
+                                    span  #{course.courseDate} oy
+                            p(style={height: '9em', overflow: 'hidden'}) #{course.text}
+                        .button-bottom
+                            a.button-default(href='#') Kirish

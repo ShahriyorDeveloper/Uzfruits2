@@ -1,0 +1,131 @@
+// Main Wrapper Start
+.as-mainwrapper
+    // Bg White Start
+    .bg-white
+        // Header Area Start
+        header
+          
+            .header-logo-menu.sticker.fixed
+                .container 
+                    .row
+                        .col-lg-3.col-12
+                            .logo
+                                a(href='/')
+                                   | ТОВАРЫ СО СКИДКОЙ
+                        .col-lg-9
+
+                            .mainmenu-area.pull-right
+                                .mainmenu.d-none.d-lg-block
+                                    nav
+                                        
+                                        ul#nav.border-full.border-top
+                                            li    
+                                              a(href='/') АКЦИИ 
+                                            li    
+                                              a(href='/') ОПЛАТА И ДОСТАВКА
+                                            li    
+                                              a(href='/') 
+                                                | ВОЗВРАТ И ОБМЕН
+                                            li    
+                                              a(href='/') 
+                                                | ТОВАРЫ ОПТОМ
+                                            li    
+                                              a(href='/aloqa') КОНТАКТЫ
+                                            li
+                                              .otziv
+                                                a(href='tel:+99893-302-67-27')
+                                                  
+                                                  |  ОТЗЫВЫ О НАС
+                                            if user
+                                              li
+                                                  | Admin
+                                                  ul.sub-menu
+                                                      li
+                                                          a(href='/categories')
+                                                              | Bo'limlar
+                                                      li
+                                                          a(href='/kurslar')
+                                                              | Kurslar
+                                                      li
+                                                          a(href='/teacher')
+                                                              | O'qituvchilar
+                                                      //- li
+                                                      //-     a(href='/info')
+                                                      //-         | Statistika
+                                                      li
+                                                          a(href='/aloqa/admin')
+                                                              | Aloqa admin
+                                                      li
+                                                          a(href='/aloqa/admin/kurs')
+                                                              | Arizalar
+                                              li
+                                                a(href='/logout') Chiqish
+                                
+                                // End of Search Form
+            // Mobile Menu Area start
+
+            .header-logo-menu.sticker
+                .container
+                    .row
+                        .col-lg-3.col-12.mt-5
+                            .logo1
+                                .row 
+                                    .col-lg-6
+                                        a(href='/')
+                                             img(src="img/logo/logo2.png", alt="")
+                          
+                                    .col-lg-6
+
+                                        .loc1 Ваш город 
+                                        br
+                                        .loc  Наманган
+
+                        .col-lg-6.mt-5
+                          .input
+                            .row 
+                                .col-lg-6.m-auto.right
+                                    input(type="text" placeholder='Поиск по товарам')
+
+                                    .btn.btn-warning Поиск
+                            
+
+                        
+                        .col-lg-3.mt-5
+                            .row 
+                                .col-lg-6.mt-5
+                                    | info@UzFruits.uz
+                                    | +998 91 181 00 03
+                                .col-lg-6.mt-5
+                                    | Часы работы:
+
+                                    | Пн-Вс (с 9:00-18:00)
+
+
+                
+            //- .mobile-menu-area
+            //-     .container.clearfix
+            //-         .row
+            //-             .col-lg-12.col-md-12.col-sm-12
+            //-                 .mobile-menu
+            //-                     nav#dropdown
+            //-                         ul
+            //-                           li
+            //-                               a(href='/kurslar') Kurlar
+            //-                               ul.sub-menu
+            //-                                 each categoryheader, i in headercourse ? headercourse : ['Bosh sahifa']
+            //-                                   li
+            //-                                       a(href=`/categories/${categoryheader._id}`) #{categoryheader.name}
+            //-                                       ul
+            //-                                         each course, i in categoryheader.course ? categoryheader.course : ['Bosh sahifa']
+            //-                                           li
+            //-                                               a(href=`/kurslar/${course._id}`) #{course.name}
+            //-                           li
+            //-                               a(href='/aloqa') Aloqa
+            //-                           li
+            //-                               a(href='/teacher') O'qituvchilar
+            //-                           li
+            //-                               a(href='tel:+99893-302-67-27')
+            //-                                 i.fa.fa-phone
+            //-                                 |  +99893-302-67-27
+                                      
+            // Mobile Menu Area end

@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  //- .container
+
+  //-   a(href="/music/edit/" + course._id).mr-5.btn.btn-warning O`zgartirish
+  //-   span  
+  //-   a(href="/music/delete/" + course._id).btn.btn-danger O`chirish
+
+
+  // Course Area Start
+  .course-area.section-padding
+      .container
+          .row
+              .col-md-12
+                  .section-title-wrapper
+                      .section-title
+                          h3=title
+                          p Markazimiz tomonidan siz uchun taqdim etadigan kurslarimiz bilan tanishing
+          if user
+            .row
+              .col-12.d-flex
+                a.btn.btn-dark.m-5(href=`kurslar/add`) Yangi qo'shish
+          .row.d-flex.justify-content-center
+              each course, i in result
+                .col-lg-4.col-md-6
+                    .single-item.mb-5.mt-5
+                        .single-item-image.overlay-effect
+                            a(href="kurslar/" + course._id)
+                                //- img(src='img/course/1.jpg' alt='')
+                                img(src="/img/course/" + course.image alt='')
+                        .single-item-text
+                            h4
+                                a(href="kurslar/" + course._id) #{course.name}
+                            .single-item-text-info
+                                span
+                                    i.fas.fa-chalkboard-teacher
+                                    span #{course.teacher.name}
+                                span
+                                    i.fas.fa-clock 
+                                    span  #{course.courseDate} oy
+                                if user
+                                  span
+                                    a(href="kurslar/edit/" + course._id)
+                                      i.fas.fa-edit.text-warning
+                                  span    
+                                    a(href="kurslar/edit/image/" + course._id)
+                                      i.fas.fa-images.text-warning
+                                  span
+                                    a(href="kurslar/delete/" + course._id)
+                                      i.fas.fa-trash.text-danger
+                            p(style={height: '9em', overflow: 'hidden'}) #{course.text}
+                        .button-bottom
+                            a.button-default(href='#') Kirish

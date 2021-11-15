@@ -1,0 +1,203 @@
+extends layout
+
+block content
+
+  .slider-area.no-overlay.slider-three
+      .preview-2
+          #nivoslider.slides
+              img(src='img/slider/81.jpg' alt='' title='#slider-1-caption1')
+              img(src='img/slider/meva.jpg' alt='' title='#slider-1-caption2')
+              img(src='img/slider/meva2.jpg' alt='' title='#slider-1-caption2')
+          #slider-1-caption1.nivo-html-caption.nivo-caption
+              .banner-content.slider-1
+                  .container
+                      .row
+                          .col-md-12
+                              .text-content-wrapper
+                                  .text-content.text-center
+                                      h1.title1.wow.fadeInUp.border-none(data-wow-duration='2000ms' data-wow-delay='0s')
+                                          |  Орехи сухофрукты специи
+                                          br
+                                      .banner-readmore.wow.fadeInUp(data-wow-duration='3600ms' data-wow-delay='.6s')
+                                          a.button-default(href='/kurslar') Click
+          #slider-1-caption2.nivo-html-caption.nivo-caption
+              .banner-content.slider-2
+                  .container
+                      .row
+                          .col-md-12
+                              .text-content-wrapper
+                                  .text-content.slide-2.text-center
+                                      h1.title1.wow.rotateInDownLeft.border-none(data-wow-duration='1000ms' data-wow-delay='0s')
+                                           |  Орехи сухофрукты специи
+                                            
+                                      .banner-readmore.wow.rotateInDownLeft(data-wow-duration='1800ms' data-wow-delay='0s')
+                                          a.button-default(href='#') click
+  // End of Slider Area
+
+  // Course Area Start
+  .course-area.section-padding
+      .container
+          .row
+              .col-md-12
+                  .section-title-wrapper1
+                      .section-title
+                          h3 Орехи сухофрукты специи
+          .row 
+           .fix
+            .col-lg-3.fixed-sn.white-skin
+                  ul 
+                    li 
+                      a(href="#")  Орехи
+                    li 
+                      a(href="#")  Сухофрукты
+                    li 
+                      a(href="#")  Сушёные ягоды
+                    li  
+                      a(href="#")  Цукаты 
+                    li  
+                      a(href="#")  Сладости 
+          .row.d-flex.justify-content-center
+              each course, i in courseList
+                
+                .col-lg-3.col-md-6
+                    .single-item
+                        .single-item-image.overlay-effect
+                            a(href="kurslar/" + course._id)
+                                //- img(src='img/course/1.jpg' alt='')
+                                img(src="/img/course/" + course.image alt='')
+                        .single-item-text
+                            h4
+                                a(href="kurslar/" + course._id) #{course.name}
+                            .single-item-text-info
+                                //- span
+                                //-     i.fas.fa-chalkboard-teacher
+                                //-     span
+                                //-       |  #{course.teacher.name}
+                                span
+                                   
+                            p(style={height: '9em', overflow: 'hidden'}) #{course.text}
+                        .button-bottom
+                            a.button-default(href='#') Вступление
+              .col-md-12.col-sm-12.text-center
+               
+  // End of Course Area
+ 
+
+  //- // Bo'limlar
+  //- .category-area
+  //-   .container
+  //-     .row
+  //-       .col-md-12
+  //-         .section-title-wrapper
+  //-           .section-title
+  //-             h3 РАЗДЕЛЫ
+  //-             p 
+  //-     .row.d-flex.justify-content-center
+  //-       each category, i in categoryList
+  //-         .col-lg-3.col-md-6.col-12
+  //-           .single-category-item
+  //-             .single-category-text
+  //-               h3
+  //-                 a(href="categories/" + category._id)= category.name
+  //-               .social-links
+  //-                 a(href="categories/" + category._id)
+  //-                   i(class=`${category.icon}`)
+  
+  // Kategoriyalar tugashi
+
+
+  //- // BA'ZI RAQAMLAR!
+  //- .fun-factor-area
+  //-     .container
+  //-         .row
+  //-             .col-md-12
+  //-                 .section-title-wrapper.white
+  //-                     .section-title
+  //-                         h3 BA'ZI RAQAMLAR!
+  //-                         p Markazimizning erishib kelayotgan natijalari sonlarda
+  //-         .row
+  //-             .col-lg-3.col-md-6.col-12
+  //-                 .single-fun-factor
+  //-                     h4
+  //-                       i.zmdi.zmdi-accounts-list-alt
+  //-                     h4 O'qituvchilar
+  //-                     h2
+  //-                         span.counter #{teachersCount}
+  //-                         | +
+  //-             .col-lg-3.col-md-6.col-12
+  //-                 .single-fun-factor
+  //-                     h4
+  //-                       i.zmdi.zmdi-accounts
+  //-                     h4 O`quvchilar
+  //-                     h2
+  //-                         span.counter 120
+  //-                         | +
+  //-             .col-lg-3.col-md-6.col-12
+  //-                 .single-fun-factor
+  //-                     h4
+  //-                       i.zmdi.zmdi-caret-right-circle
+  //-                     h4 Kurslar
+  //-                     h2
+  //-                         span.counter #{coursesCount}
+  //-                         | +
+  //-             .col-lg-3.col-md-6.col-12
+  //-                 .single-fun-factor
+  //-                     h4
+  //-                       i.zmdi.zmdi-center-focus-strong
+  //-                     h4 Yutuqlar
+  //-                     h2
+  //-                         span.counter 20
+  //-                         | +
+  //- // BA'ZI RAQAMLAR!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //- section#contact.contact
+  //-   .container
+  //-     h1.m-5.text-info= title
+  //-     .row.mt-5
+  //-       .col-lg-8
+  //-         .info
+  //-           .address
+  //-             each music, i in musicsList
+  //-               h1.d-flex.justify-content-around
+  //-                 .p.d-block
+  //-                   a(href="music/" + music._id)
+  //-                     h4=music.name
+  //-                   a(href="music/" + music._id)
+  //-                     p=music.singer
+  //-                 audio(controls='', ) //autoplay=''
+  //-                   source(src='/uploads/audios/' + music.audio, type='audio/mpeg')
+  //-                   //- i.bi.bi-play
+
+  //-               hr
+  //-       .col-lg-4.bg-secondary
+  //-         .container
+  //-           div.d-flex.m-4.justify-content-center.text-white.align-items-center
+  //-             h3
+  //-               i.bx.bxs-category
+  //-             h3 Kategoriyalar
+  //-           hr
+  //-           each category, i in categoryList
+  //-               a(href="categories/" + category._id).d-flex.flex-content-start
+  //-                 //- p=category.icon
+  //-                 h4=category.name
+  //-                 //- p=category.color
+  //-               hr
+

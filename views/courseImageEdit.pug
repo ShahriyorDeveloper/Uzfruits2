@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    .container.mt-5
+        br
+        h1.mb-3.mt-5= title
+        form(method="POST" action="/kurslar/edit/image/" + course._id enctype='multipart/form-data')
+          .form-group
+              label(for='image') Rasm
+              input#image.form-control(type='file' name="image" )
+          
+          button.btn.btn-success.m-2(type='submit') Rasmni Yangilash
+
